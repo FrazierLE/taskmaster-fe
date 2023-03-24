@@ -3,7 +3,6 @@ import { Container, Card, CardContent, Typography, CardActions, Button } from '@
 import AnswerModal from '../AnswerModal/AnswerModal'
 
 const TechQuestion = (props: any) => {
-  const [tQuestions, setTQuestions] = useState(['How do you implement your error handling?', 'What is your process to test and find bugs in an application?'])
   const [dailyQuestion, setDailyQuestion] = useState('') 
   const [open, setOpen] = useState(false)
   const [tQuestionId, setTQuestionId] = useState('')
@@ -17,10 +16,9 @@ const TechQuestion = (props: any) => {
   }
 
   const randomizeTQuestion = () => {
-    const question = tQuestions[Math.floor(Math.random()*tQuestions.length)]
-    // const question = props.tQuestions[Math.floor(Math.random()*props.tQuestions.length)]
-    setDailyQuestion(question)
-    // setBQuestionId(question['id'])
+    const question = props.tQuestions[Math.floor(Math.random()*props.tQuestions.length)]
+    setDailyQuestion(question['question'])
+    setTQuestionId(question['id'])
   }
 
   useEffect(() => {
