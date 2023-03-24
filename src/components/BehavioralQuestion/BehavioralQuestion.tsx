@@ -28,13 +28,12 @@ const BehavioralQuestion = (props: any) => {
   }, [date])
 
   return(
-    
-    <Container>
+    <Container >
     {open && <AnswerModal closeModal={closeModal} open={open} id={bQuestionId} profile={props.profile}/>}
-    <Card sx={{ minWidth: 275, minHeight: 200, margin: '1rem', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Card id='bquestion-div' sx={{ minWidth: 275, minHeight: 200, margin: '1rem', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       Daily Behavioral Interview Question
       <CardContent sx={{display: 'flex', alignItems: 'center'}}>
-        <Typography sx={{fontSize: '1.5rem'}}>
+        <Typography id='daily-bquestion' sx={{fontSize: '1.5rem'}}>
           {dailyQuestion}
         </Typography>
       </CardContent>
