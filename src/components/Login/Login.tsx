@@ -12,23 +12,16 @@ const style ={
   padding: '1rem'
 }
 
-
 const Login = (props: any) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({})
   const [account, setAccount] = useState(true)
+  
   const checkLogin = () => {
     props.login()
     setUser(props.profile)
     navigate("/home");
   }
-
-  // const createAccount = () => {
-  //   if(props.profile) {
-  //     setAccount(true)
-  //   }
-  //   else {setAccount(false)}
-  // }
 
   return(
     <div>
@@ -46,26 +39,11 @@ const Login = (props: any) => {
             Task Master
       </Typography>
       </AppBar>
-      {/* {props.profile ?  */}
     <Card sx={style}>
-      {/* <TextField id="outlined"label="Username"/>
-      <TextField id='outlined' label='Password'/> */}
       <CardActions>
         <Button variant="contained" onClick={checkLogin}>Login with Google</Button>
       </CardActions>
-      {/* <CardActions>
-        <Button onClick={createAccount}>Create Account</Button>
-      </CardActions> */}
     </Card> 
-    {/* : <Card sx={style}>
-      <TextField id="outlined"label="Username"/>
-      <TextField id='outlined' label="Email" />
-      <TextField id='outlined' label='Password'/>
-      <CardActions>
-        <Button onClick={createAccount}>Create Account</Button>
-      </CardActions> */}
-    {/* </Card> */}
-    {/* } */}
     </Container>
     </div>
   )

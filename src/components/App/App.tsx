@@ -8,6 +8,7 @@ import SavedAnswers from '../SavedAnswers/SavedAnswers';
 import { useGoogleLogin, GoogleLogin, googleLogout } from '@react-oauth/google'
 import axios from 'axios'
 
+//thoughts - create post request to update user if login is successful -- pass user.access_token, profile.id 
 
 function App() {
   const [todos, setTodos] = useState<any>(['Job Hunt'])
@@ -26,6 +27,7 @@ function App() {
 
   useEffect(() => {
     if (user) {
+      // console.log('USER', user.access_token)
       axios
         .get(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
         headers: {
@@ -39,10 +41,11 @@ function App() {
     }
 }, [user]);
 
-const logOut = () => {
-  googleLogout();
-  setProfile(null);
-};
+  const logOut = () => {
+    googleLogout();
+    setProfile(null);
+  };
+
   const removeFromList = (todo: any) => {
     const unfinishedTodos = todos.filter((item: any) => item !== todo)
     setTodos(unfinishedTodos)

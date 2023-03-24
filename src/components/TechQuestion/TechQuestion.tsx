@@ -3,7 +3,6 @@ import { Container, Card, CardContent, Typography, CardActions, Button } from '@
 import AnswerModal from '../AnswerModal/AnswerModal'
 
 const TechQuestion = (props: any) => {
-  console.log('PROPS', props)
   const date = Date()
   const [dailyQuestion, setDailyQuestion] = useState('') 
   const [open, setOpen] = useState(false)

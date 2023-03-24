@@ -37,7 +37,7 @@ const AnswerModal = (props: any) => {
   const [ saveTheAnswer, {loading, error, data} ] = useMutation(B_ANSWER)
   const [answer, setAnswer] = useState('')
 
-  const answerQuestion = async () => {
+  const answerBQuestion = async () => {
     const result = await saveTheAnswer({
       variables: {
         userId: parseInt(props.profile.id),
@@ -62,7 +62,7 @@ const AnswerModal = (props: any) => {
           onChange={event => setAnswer(event.target.value)}
         />
       <CardActions>
-        <Button onClick={answerQuestion}>SAVE</Button>
+        <Button onClick={answerBQuestion}>SAVE</Button>
       </CardActions>
       </Box>
     </Modal>
