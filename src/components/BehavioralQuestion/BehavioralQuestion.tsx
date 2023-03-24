@@ -4,6 +4,8 @@ import AnswerModal from '../AnswerModal/AnswerModal'
 import { Container } from '@mui/system'
 
 const BehavioralQuestion = (props: any) => {
+  console.log('PROPS', props)
+  const date = Date()
   const [dailyQuestion, setDailyQuestion] = useState('')
   const [open, setOpen] = useState(false)
   const [bQuestionId, setBQuestionId] = useState('')
@@ -24,12 +26,12 @@ const BehavioralQuestion = (props: any) => {
 
   useEffect(() => {
    randomizeBQuestion()
-  }, [props.bQuestions])
+  }, [date])
 
   return(
     
     <Container>
-    {open && <AnswerModal closeModal={closeModal} open={open} id={bQuestionId}/>}
+    {open && <AnswerModal closeModal={closeModal} open={open} id={bQuestionId} profile={props.profile}/>}
     <Card sx={{ minWidth: 275, minHeight: 200, margin: '1rem', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       Daily Behavioral Interview Question
       <CardContent sx={{display: 'flex', alignItems: 'center'}}>

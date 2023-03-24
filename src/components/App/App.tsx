@@ -53,7 +53,7 @@ const logOut = () => {
       {location.pathname !== '/' && <NavBar logOut={logOut}/>}
       <Routes>
         <Route path='/' element={<Login profile={profile} login={login}/>} />
-        <Route path='/home' element={<Home todos={todos} addTodo={addTodo} removeFromList={removeFromList}/>}/>
+        <Route path='/home' element={<Home profile={profile} todos={todos} addTodo={addTodo} removeFromList={removeFromList}/>}/>
         <Route path='/answers' element={<SavedAnswers />} />
       </Routes>
     </div>

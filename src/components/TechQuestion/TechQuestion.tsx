@@ -3,6 +3,8 @@ import { Container, Card, CardContent, Typography, CardActions, Button } from '@
 import AnswerModal from '../AnswerModal/AnswerModal'
 
 const TechQuestion = (props: any) => {
+  console.log('PROPS', props)
+  const date = Date()
   const [dailyQuestion, setDailyQuestion] = useState('') 
   const [open, setOpen] = useState(false)
   const [tQuestionId, setTQuestionId] = useState('')
@@ -23,11 +25,11 @@ const TechQuestion = (props: any) => {
 
   useEffect(() => {
     randomizeTQuestion()
-  }, [props.tQuestions])
+  }, [date])
 
   return(
     <Container>
-      {open && <AnswerModal closeModal={closeModal} open={open} />}
+      {open && <AnswerModal closeModal={closeModal} open={open} profile={props.profile}/>}
     <Card sx={{ minWidth: 275, minHeight: 200, margin: '1rem', padding: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       Daily Technical Interview Question
       <CardContent sx={{display: 'flex', alignItems: 'center'  }}>

@@ -31,8 +31,8 @@ const Home = (props: any) => {
     <Container sx={{ py: 0, display: 'flex', alignItems: 'baseline'}} maxWidth="md">
     <ToDos todos={props.todos} addTodo={props.addTodo} removeFromList={props.removeFromList}/>
     <Grid container spacing={0} sx={{display: 'flex', flexDirection: 'column'}}>
-      {bQuestions.data && <BehavioralQuestion bQuestions={bQuestions.data.bQuestions}/>}
-      {tQuestions.data && <TechQuestion tQuestions={tQuestions.data.tQuestions}/>}
+      {bQuestions.data && <BehavioralQuestion bQuestions={bQuestions.data.bQuestions} profile={props.profile}/>}
+      {tQuestions.data && <TechQuestion tQuestions={tQuestions.data.tQuestions} profile={props.profile}/>}
       <TechChallenge />
     </Grid>
 </Container>

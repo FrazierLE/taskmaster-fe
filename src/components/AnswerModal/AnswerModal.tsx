@@ -18,7 +18,6 @@ mutation BAnswer ($userId: Int!, $bQuestionId: Int!, $answer: String!) {
   }
 }`
 
-// ($name: Stirng!, authoProvdier: {credentials: {$email: string!, $password: string! }})
 
 const style = {
   position: 'absolute',
@@ -41,8 +40,8 @@ const AnswerModal = (props: any) => {
   const answerQuestion = async () => {
     const result = await saveTheAnswer({
       variables: {
-        userId: 1,
-        bQuestionId: props.id,
+        userId: parseInt(props.profile.id),
+        bQuestionId: Number(props.id),
         answer: answer
       }
     })
