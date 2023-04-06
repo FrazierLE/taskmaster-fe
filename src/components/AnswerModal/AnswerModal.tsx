@@ -18,7 +18,6 @@ mutation BAnswer ($userId: Int!, $bQuestionId: Int!, $answer: String!) {
   }
 }`
 
-
 const style = {
   position: 'absolute',
   top: '50%',
@@ -37,8 +36,9 @@ const AnswerModal = (props: any) => {
   const [ saveTheAnswer, {loading, error, data} ] = useMutation(B_ANSWER)
   const [answer, setAnswer] = useState('')
 
-  const answerBQuestion = async () => {
-    const result = await saveTheAnswer({
+  const answerBQuestion = () => {
+    console.log('PROPS OF ANSWER MODAL', props.profile.id)
+    const result = saveTheAnswer({
       variables: {
         userId: parseInt(props.profile.id),
         bQuestionId: Number(props.id),

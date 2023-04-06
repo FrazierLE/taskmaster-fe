@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Container, Card, Button, TextField, CardActions, IconButton,Typography, Toolbar, AppBar } from '@mui/material'
+// import { useQuery, gql, useMutation } from '@apollo/client' 
 
 const style ={
   display: 'flex',
@@ -12,16 +13,19 @@ const style ={
   padding: '1rem'
 }
 
+
 const Login = (props: any) => {
+  console.log('PROPS AT LOGIN', props)
   const navigate = useNavigate();
-  const [user, setUser] = useState({})
+  // const [updatedUser, setUpdatedUser] = useState({})
   const [account, setAccount] = useState(true)
   
   const checkLogin = () => {
     props.login()
-    setUser(props.profile)
+    // setUpdatedUser(props.profile)
     navigate("/home");
   }
+
 
   return(
     <div>
