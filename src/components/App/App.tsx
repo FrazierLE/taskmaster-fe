@@ -69,8 +69,9 @@ function App() {
   };
 
   const removeFromList = (todo: any) => {
-    const unfinishedTodos = todos.filter((item: any) => item !== todo)
-    setTodos(unfinishedTodos)
+    setTodos([])
+      // const unfinishedTodos = todos.filter((item: any) => item !== todo)
+      // setTodos(unfinishedTodos)
   }
 
   return (

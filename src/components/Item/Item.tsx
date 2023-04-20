@@ -7,20 +7,20 @@ import { FormGroup, FormControlLabel } from '@mui/material';
 const Item = ({ name, removeFromList }: any) => {
     const [checked, setChecked] = useState(false);
 
-    const removeTodo = () => {
-      if(!checked) {
-        removeFromList(name)
-      }
-    }
+    // const removeTodo = () => {
+    //   if(!checked) {
+    //     // removeFromList(name)
+    //   }
+    // }
 
     const handleChange = (event: any) => {
       setChecked(event.target.checked);
-      removeTodo()
+      // removeTodo()
     };
   
     return (
       <div>
-        <FormControlLabel control={<Checkbox />} onChange={(event) => handleChange(event)} label={name} />
+        <FormControlLabel control={<Checkbox />} onChange={(event) => handleChange(event)} label={name} sx={{textDecorationLine: checked ? 'line-through' : 'none'}}/>
       </div>
     );
 }
